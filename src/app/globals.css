@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components{
   .link{
     @apply border-b-2 border-b-transparent transition;
@@ -21,7 +22,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #232325;
+    --background: #171718;
     --foreground: #ededed;
     --primary: #0073fa;
     --secundary: #2e3038;
@@ -31,7 +32,7 @@
 
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--foreground);
   background-image: linear-gradient(to top, var(--primary), var(--background) 50%);
   background-size: 100% 100%;
