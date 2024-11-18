@@ -2,21 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  .link{
+    @apply border-b-2 border-b-transparent transition;
+  }
+  .link:hover{
+    @apply border-b-blue-600;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #0073fa;
+  --secundary: #2e3038;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #232325;
     --foreground: #ededed;
+    --primary: #0073fa;
+    --secundary: #2e3038;
+
   }
 }
 
+
 body {
+  height: 100vh;
   color: var(--foreground);
-  background: var(--background);
+  background-image: linear-gradient(to top, var(--primary), var(--background) 50%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   font-family: Arial, Helvetica, sans-serif;
 }
 
