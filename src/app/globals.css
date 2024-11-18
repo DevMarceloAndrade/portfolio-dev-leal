@@ -10,6 +10,13 @@
   .link:hover{
     @apply border-b-blue-600;
   }
+
+  .techIcon{
+    @apply rounded-3xl border-y-2 p-1 transition-all;
+  }
+  .techIcon:hover{
+    @apply border-blue-600 border-2 transition-colors;
+  }
 }
 
 :root {

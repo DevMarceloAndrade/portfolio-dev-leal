@@ -15,9 +15,15 @@ const AboutMe = ()=>{
                         experiencia em desenvolvimento web, minhas principais skills estão ligadas ao desenvolvimento 
                         de API Rest e criação de Websites.
                     </p>
-                    <h2 className='text-3xl mt-6'>Skills</h2>
-                    <div>
-
+                    <h2 className='text-3xl my-8 md:mt-28'>Principais Tecnologias|</h2>
+                    <div className='flex flex-wrap justify-between gap-4 mt-4'>
+                        <Image className='techIcon' src={'/techIcons/ts.svg'} alt='typeScript' width={80} height={80}/>
+                        <Image className='techIcon' src={'/techIcons/react.svg'} alt='react' width={80} height={80}/>
+                        <Image className='techIcon' src={'/techIcons/next.svg'} alt='next' width={80} height={80}/>
+                        <Image className='techIcon' src={'/techIcons/node.svg'} alt='node' width={80} height={80}/>
+                        <Image className='techIcon' src={'/techIcons/postgres.svg'} alt='postgres' width={80} height={80}/>
+                        <Image className='techIcon' src={'/techIcons/java.svg'} alt='java' width={80} height={80}/>
+                        <Image className='techIcon' src={'/techIcons/spring.svg'} alt='spring' width={80} height={80}/>
                     </div>
                 </div>
                 <Image src={aboutMeImg} alt='logo' width={400} height={600}/>
