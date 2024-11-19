@@ -12,8 +12,8 @@ const AboutMe = ()=>{
                     <h1 className='text-4xl mt-12'>Desenvolvedor Web|</h1>
                     <p className='mt-4'>
                         Sou Desenvolvedor Full Stack e acadêmico em Análise e Desenvolvimento de Sistemas, com
-                        experiencia em desenvolvimento web, minhas principais skills estão ligadas ao desenvolvimento 
-                        de API Rest e criação de Websites.
+                        experiencia em desenvolvimento web, minhas principais skills estão ligadas a criação
+                        de API Rest e de Websites.
                     </p>
                     <h2 className='text-3xl my-8 md:mt-28'>Principais Tecnologias|</h2>
                     <div className='flex flex-wrap justify-between gap-4 mt-4'>
