@@ -12,10 +12,10 @@
   }
 
   .techIcon{
-    @apply rounded-3xl border-y-2 p-1 transition-all;
+    @apply bg-white rounded-3xl border-y-2 border-blue-600 p-1 transition-all;
   }
   .techIcon:hover{
-    @apply border-blue-600 border-2 transition-colors;
+    @apply  border-2 transition-all scale-110;
   }
 
   .pageLink{
