@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import aboutMeImg from '../../../public/aboutMe.svg'
-const AboutMe = ()=>{
+const HomeBody = ()=>{
 
     return(
         <>
@@ -32,4 +32,4 @@ const AboutMe = ()=>{
     )
 }
 
-export default AboutMe
+export default HomeBody

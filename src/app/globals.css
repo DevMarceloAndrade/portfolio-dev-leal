@@ -17,6 +17,13 @@
   .techIcon:hover{
     @apply border-blue-600 border-2 transition-colors;
   }
+
+  .pageLink{
+    @apply flex gap-2 items-center md:text-2xl transition-all;
+  }
+  .pageLink:hover{
+    @apply scale-125 transition-all;
+  }
 }
 
 :root {
@@ -33,7 +40,6 @@
     --foreground: #ededed;
     --primary: #0073fa;
     --secundary: #2e3038;
-
   }
 }
 

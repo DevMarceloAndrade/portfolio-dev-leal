@@ -26,12 +26,12 @@ const Footer = ()=>{
     }
     return (
         <>
-            <footer className="mt-16 flex gap-32 justify-center">
+            <footer className="m-2 md:mt-16 flex gap-12 md:gap-32 justify-center">
                 <form action={setPosition}>
                     <input name="condition" type="hidden" value={"prev"} />
                     {
                         positionCookie > 0? 
-                            <button type="submit" className="flex gap-2 items-center text-2xl">
+                            <button type="submit" className="pageLink">
                                 <Image src={'/positionIcons/prev.svg'} alt='arrow' width={50} height={50}/>
                                 {pathLinks[positionCookie -1][1]}
                             </button>
@@ -42,7 +42,7 @@ const Footer = ()=>{
                     <input name="condition" type="hidden" value={"next"} />
                     {
                         positionCookie < 3? 
-                            <button type="submit" className="flex gap-2 items-center text-2xl">
+                            <button type="submit" className="pageLink">
                                 {pathLinks[positionCookie +1][1]}
                                 <Image src={'/positionIcons/nex.svg'} alt='arrow' width={50} height={50}/>
                             </button>
