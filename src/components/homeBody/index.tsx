@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import aboutMeImg from '../../../public/aboutMe.svg'
+import BtnCurriculum from './btnCurriculum'
 const HomeBody = ()=>{
 
     return(
@@ -25,6 +26,7 @@ const HomeBody = ()=>{
                         <Image className='techIcon' src={'/techIcons/java.svg'} alt='java' width={80} height={80}/>
                         <Image className='techIcon' src={'/techIcons/spring.svg'} alt='spring' width={80} height={80}/>
                     </div>
+                    <BtnCurriculum/>
                 </div>
                 <Image src={aboutMeImg} alt='logo' width={400} height={600}/>
             </div>

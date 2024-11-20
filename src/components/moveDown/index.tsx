@@ -1,19 +1,23 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-const MoveDown = () => {
+
+type Props = {
+    idTarget: string
+    children?: React.ReactNode
+    className?: string
+}
+const MoveDown = ({idTarget, children, className}: Props) => {
 
     const moveAction = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
             event.preventDefault();
-            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById(idTarget)?.scrollIntoView({ behavior: 'smooth' });
         };
 
     return (
         <>
-            <Link href={'#projects'} id="moveDown" onClick={moveAction}>
-                <Image
-                    className='md:m-16 animate-bounce'
-                    src={'/positionIcons/down.svg'} alt='logo' width={100} height={100} />
+            <Link className={className} href={`#${idTarget}`} onClick={moveAction}>
+                {children}
             </Link>
         </>
     )

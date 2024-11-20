@@ -5,7 +5,7 @@
 
 @layer components{
   .link{
-    @apply border-b-2 border-b-transparent transition;
+    @apply p-1 border-2 border-transparent transition;
   }
   .link:hover{
     @apply border-b-blue-600;
