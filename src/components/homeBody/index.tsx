@@ -1,10 +1,12 @@
 import Image from 'next/image'
+import MoveDown from "@/components/moveDown";
+import ProjectsSection from './projectsSection';
 import aboutMeImg from '../../../public/aboutMe.svg'
 import BtnCurriculum from './btnCurriculum'
-const HomeBody = ()=>{
+const HomeBody = () => {
 
-    return(
-        <>
+    return (
+        <div className="flex flex-col items-center">
             <div className='p-8 flex justify-center flex-wrap md:flex-nowrap md:justify-between md:p-0'>
                 <div className='md:w-1/2'>
 
@@ -18,19 +20,26 @@ const HomeBody = ()=>{
                     </p>
                     <h2 className='text-3xl my-8 md:mt-28'>Principais Tecnologias|</h2>
                     <div className='flex flex-wrap justify-between gap-4 mt-4'>
-                        <Image className='techIcon' src={'/techIcons/ts.svg'} alt='typeScript' width={80} height={80}/>
-                        <Image className='techIcon' src={'/techIcons/react.svg'} alt='react' width={80} height={80}/>
-                        <Image className='techIcon' src={'/techIcons/next.svg'} alt='next' width={80} height={80}/>
-                        <Image className='techIcon' src={'/techIcons/node.svg'} alt='node' width={80} height={80}/>
-                        <Image className='techIcon' src={'/techIcons/postgres.svg'} alt='postgres' width={80} height={80}/>
-                        <Image className='techIcon' src={'/techIcons/java.svg'} alt='java' width={80} height={80}/>
-                        <Image className='techIcon' src={'/techIcons/spring.svg'} alt='spring' width={80} height={80}/>
+                        <Image className='techIcon' src={'/techIcons/ts.svg'} alt='typeScript' width={80} height={80} />
+                        <Image className='techIcon' src={'/techIcons/react.svg'} alt='react' width={80} height={80} />
+                        <Image className='techIcon' src={'/techIcons/next.svg'} alt='next' width={80} height={80} />
+                        <Image className='techIcon' src={'/techIcons/node.svg'} alt='node' width={80} height={80} />
+                        <Image className='techIcon' src={'/techIcons/postgres.svg'} alt='postgres' width={80} height={80} />
+                        <Image className='techIcon' src={'/techIcons/java.svg'} alt='java' width={80} height={80} />
+                        <Image className='techIcon' src={'/techIcons/spring.svg'} alt='spring' width={80} height={80} />
                     </div>
-                    <BtnCurriculum/>
+                    <BtnCurriculum />
                 </div>
-                <Image src={aboutMeImg} alt='logo' width={400} height={600}/>
+                <Image src={aboutMeImg} alt='logo' width={400} height={600} />
             </div>
-        </>
+            <MoveDown idTarget="projects">
+                <Image
+                    className='md:m-16 animate-bounce'
+                    src={'/positionIcons/down.svg'} alt='logo' width={100} height={100}
+                />
+            </MoveDown>
+            <ProjectsSection />
+        </div>
     )
 }
 

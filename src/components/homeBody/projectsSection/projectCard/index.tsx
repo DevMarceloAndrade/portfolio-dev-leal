@@ -9,10 +9,10 @@ const ProjectCard = ({imageUrl, title, href}: Props) => {
 
     return (
         <>
-            <Link href={href} className='flex flex-col p-1 gap-2 mt-4 w-96 h-72 bg-opacity-30 rounded-t-2xl bg-black'>
+            <Link href={href} className='flex flex-col p-1 gap-2 mt-4 w-full h-72 bg-opacity-30 rounded-t-2xl bg-black md:w-96'>
                 <div 
                     className='flex justify-center rounded-t-2xl border-y-0 border-2 border-white hover:border-0 transition-all w-full h-72
-                    hover:scale-150'
+                    hover:scale-150 hover:rounded-none'
                     style={{backgroundImage: `url(${imageUrl})`,backgroundSize: '100% 100%'}}
                 >
                 </div>
