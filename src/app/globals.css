@@ -24,6 +24,13 @@
   .pageLink:hover{
     @apply scale-125 transition-all;
   }
+
+  .buttonBlue{
+    @apply p-1 bg-blue-600 flex gap-1 items-center w-fit font-semibold border-x-2 border-white rounded-md transition-all;
+  }
+  .buttonBlue:hover{
+    @apply bg-blue-800 border-blue-600 transition-all;
+  }
 }
 
 :root {

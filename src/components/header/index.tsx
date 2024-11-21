@@ -14,7 +14,7 @@ const Header = ()=>{
                 <div className='flex gap-3'>
                     <Link href={'/'} className='link'>INICIO</Link>
                     <MoveDown className='link' idTarget="projects">PROJETOS</MoveDown>
-                    <Link href={'/'} className='p-1 bg-blue-600 flex gap-1 items-center w-fit font-semibold border-x-2 border-white rounded-md transition-all hover:bg-blue-800 hover:border-blue-600'>ENTRE EM CONTATO</Link>
+                    <Link href={'/'} className='buttonBlue'>ENTRE EM CONTATO</Link>
                 </div>
             </header>
         </>
