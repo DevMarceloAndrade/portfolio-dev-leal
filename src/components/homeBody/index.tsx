@@ -7,9 +7,8 @@ const HomeBody = () => {
 
     return (
         <div className="flex flex-col items-center">
-            <div className='p-8 flex justify-center flex-wrap md:flex-nowrap md:justify-between md:p-0'>
-                <div className='md:w-1/2'>
-
+            <div className='p-8 flex justify-center items-center flex-wrap-reverse lg:flex-nowrap md:justify-between md:p-0'>
+                <div className='lg:w-1/2'>
                     <img className='mt-8' src="https://readme-typing-svg.herokuapp.com/?color=0073fa&size=40&vCenter=true&width=1000&lines=Olá,+Meu+nome+é+Marcelo;Eu+tenho+26+anos,+sou+do+Brasil;Desenvolvedor+FullStack+Web;Seja+Bem+Vindo!+:%29" alt="Typing SVG">
                     </img>
                     <h1 className='titleH1'>Desenvolvedor Web|</h1>
@@ -36,7 +35,7 @@ const HomeBody = () => {
                     </div>
                     <BtnCurriculum />
                 </div>
-                    <Image className='self-start rounded-b-full' src={aboutMeImg} alt='logo' width={500} height={550} />
+                    <Image className='w-4/6 rounded-b-full md:w-1/2 md:mx-auto lg:m-0 lg:self-start xl:w-1/3' src={aboutMeImg} alt='logo' width={500} height={550} />
             </div>
             <MoveDown idTarget="projects">
                 <Image
