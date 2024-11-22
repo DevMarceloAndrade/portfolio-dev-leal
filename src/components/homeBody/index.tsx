@@ -36,7 +36,7 @@ const HomeBody = () => {
                     </div>
                     <BtnCurriculum />
                 </div>
-                <Image src={aboutMeImg} alt='logo' width={400} height={600} />
+                    <Image className='self-start rounded-b-full' src={aboutMeImg} alt='logo' width={500} height={550} />
             </div>
             <MoveDown idTarget="projects">
                 <Image
