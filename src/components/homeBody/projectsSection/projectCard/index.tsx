@@ -1,22 +1,18 @@
 import Link from "next/link"
+import CardSlide from "./cardSlide"
+import { ImageSlideProps } from "@/components/projectBody/projectSlide"
 
 type Props = {
-    href: string
-    imageUrl: string,
+    imagesProps: ImageSlideProps[]
     title: string
+    href: string
 }
-const ProjectCard = ({imageUrl, title, href}: Props) => {
-
+const ProjectCard = ({imagesProps, title, href}: Props) => {
     return (
         <>
-            <Link href={href} className='flex flex-col p-1 gap-2 mt-4 w-full h-72 bg-opacity-30 rounded-t-2xl bg-black md:w-96'>
-                <div 
-                    className='flex justify-center rounded-t-2xl border-y-0 border-2 border-white hover:border-0 transition-all w-full h-72
-                    hover:scale-150 hover:rounded-none'
-                    style={{backgroundImage: `url(${imageUrl})`,backgroundSize: '100% 100%'}}
-                >
-                </div>
-                <h2 className='text-2xl text-center'>{title}</h2>
+            <Link href={href} className='flex flex-col items-center gap-4 mt-4 w-80 h-72 md:w-96'>
+                    <CardSlide images={imagesProps} />
+                    <h1 className='text-2xl'>{title}</h1>
             </Link>
         </>
     )

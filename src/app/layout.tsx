@@ -36,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${tomorrow.className} antialiased flex justify-center`}
       >
-        <main className="container">
+        <main className="container flex flex-col justify-between">
           <Header/>
           {children}
           <Footer/>

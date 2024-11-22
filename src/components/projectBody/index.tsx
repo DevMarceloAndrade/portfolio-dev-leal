@@ -16,7 +16,7 @@ const ProjectBody = ({ descriptionChildren, images, links, projectName }: Projec
     return (
         <>
             <div className="p-2 flex flex-col gap-4 lg:p-0 lg:gap-0">
-                <h1 className='text-3xl mt-12 mb-8 md:text-4xl lg:mt-16'>{projectName}</h1>
+                <h1 className='text-3xl mb-8 md:text-4xl'>{projectName}</h1>
                 <div className='flex justify-between'>
                     {
                         links.map((link, index) => {

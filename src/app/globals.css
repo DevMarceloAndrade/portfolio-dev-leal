@@ -4,6 +4,13 @@
 
 
 @layer components{
+  .titleH1{
+    @apply text-3xl md:text-4xl mt-12;
+  }
+  .textParagraph{
+    @apply mt-4 text-sm md:text-base;
+  }
+
   .link{
     @apply p-1 border-2 border-transparent transition;
   }
@@ -50,6 +57,9 @@
   }
 }
 
+*{
+  scrollbar-color: var(--primary) #3c3c3c ;
+}
 
 body {
   min-height: 100vh;

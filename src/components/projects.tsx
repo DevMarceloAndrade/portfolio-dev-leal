@@ -68,7 +68,7 @@ export const projects: ProjectBodyProps[] = [
         )
     },
     {
-        projectName: "Rest API + Painel Administrativo para E-Commerce|",
+        projectName: "Rest API + Painel Administrativo|",
         images: [
             {
                 src: '/projects/02/project_sst.svg',
@@ -122,6 +122,43 @@ export const projects: ProjectBodyProps[] = [
                 </ol>
                 <p className='mt-4 font-bold'>
                     Tecnologias: TypeScript, Sequelize, Express, PostgresSQL, bcrypt, JWT, AdminJs e API MercadoPago. 
+                </p>
+            </div>
+        )
+    },
+    {
+        projectName: "Portifolio|",
+        images: [
+            {
+                src: '/projects/03/home.png',
+                alt: 'home'
+            },
+            {
+                src: '/projects/03/project.png',
+                alt: 'products'
+            }
+        ],
+        links: [
+            {
+                href: 'https://github.com/Ellucidator/portfolio-dev-leal',
+                text: 'Acesse o Repositório'
+            },
+            {
+                href: '/',
+                text: 'Acesse o Beta'
+            }
+        ],
+        descriptionChildren: (
+            <div>
+                O Portifolio foi desenvolvido com o objetivo de apresentar o meu trabalho e meus projetos.
+                <br />
+                Procurando oferecer uma interface elegante e intuitiva foi construido de maneira que seja facil de navegar e entender o conteudo apresentado.
+                <ol className='list-disc list-inside flex flex-col gap-2 mt-2'>
+                    <li className='ml-4'><strong>Pagina inicial:</strong> Com uma breve apresentação sobre mim e meus projetos. </li>
+                    <li className='ml-4'><strong>Paginas de projeto:</strong> Onde são apresentados os principais projetos desenvolvidos e suas principais caracteristicas.</li>
+                </ol>
+                <p className='mt-4 font-bold'>
+                    Tecnologias: TypeScript, React, Next.js, Tailwind, CSS, Swiper. 
                 </p>
             </div>
         )
