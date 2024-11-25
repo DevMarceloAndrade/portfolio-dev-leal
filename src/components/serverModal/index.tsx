@@ -9,8 +9,7 @@ const ContactModal = async () => {
     const cookieControl = (await cookies()).get('contactModal')?.value
     const classModal = `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 rounded-2xl trasition-all duration-1000 ease-in-out ${cookieControl === 'open' ? 'p-8 w-5/6 md:w-1/2 h-auto bg-[#2e3038] flex flex-col gap-4' : 'bg-transparent w-80 h-px'} `
 
-
-    const modalAction = async (form: FormData) => {
+    const modalAction = async () => {
         'use server'
 
         if (cookieControl === 'open') (await cookies()).set('contactModal', 'close', { maxAge: 60 * 5 })
