@@ -38,6 +38,21 @@
   .buttonBlue:hover{
     @apply bg-blue-800 border-blue-600 transition-all;
   }
+
+  .buttonTransparent{
+    @apply p-1 flex gap-2 items-center border-y-2 border-blue-600 rounded-md transition-all;
+  }
+  .buttonTransparent:hover{
+    @apply bg-blue-600 bg-opacity-60 transition-all;
+  }
+
+  .textInput{
+    @apply flex flex-1 p-1 min-h-9 bg-transparent border-b-2 border-blue-600;
+  }
+  .textInput:focus{
+    @apply bg-black bg-opacity-50 outline-blue-600;
+  }
+
 }
 
 :root {

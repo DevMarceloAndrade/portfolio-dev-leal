@@ -3,6 +3,7 @@ import Link from 'next/link'
 import logoHeader from '../../../public/logoHeader.svg'
 import MoveDown from '../moveDown'
 import GitHubContributions from '../gitHubCalendar'
+import ContactModal from '../serverModal'
 const Header = ()=>{
     return (
         <>
@@ -14,7 +15,7 @@ const Header = ()=>{
                 <div className='flex gap-3'>
                     <Link href={'/'} className='link'>INICIO</Link>
                     <MoveDown className='link' idTarget="projects">PROJETOS</MoveDown>
-                    <Link href={'/'} className='buttonBlue'>ENTRE EM CONTATO</Link>
+                    <ContactModal />
                 </div>
             </header>
         </>
