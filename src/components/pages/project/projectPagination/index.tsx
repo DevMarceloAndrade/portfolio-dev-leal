@@ -10,7 +10,7 @@ const ProjectPagination = ({position}:Props)=>{
 
     return (
         <>
-            <div className="mb-4 md:mb-8 flex gap-12 md:gap-32 justify-center">              
+            <div className="mb-4 md:mb-8 flex gap-4 md:gap-32 justify-center">              
                     {
                         position > 0? 
                             <Link href={pathLinks[position -1][0]} type="submit" className="pageLink">

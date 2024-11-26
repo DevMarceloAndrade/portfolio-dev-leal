@@ -1,6 +1,6 @@
-import ProjectBody from '@/components/projectBody'
-import { projects } from '@/components/projects'
-import ProjectPagination from '@/components/projectBody/projectPagination'
+import ProjectBody from '@/components/pages/project'
+import { projects } from '@/data/projects'
+import ProjectPagination from '@/components/pages/project/projectPagination'
 
 type Props = {
     params: Promise<{ id: string }>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProjectBodyProps } from "./projectBody";
+import { ProjectBodyProps } from "@/components/pages/project"; 
 
 export const projects: ProjectBodyProps[] = [
     {

@@ -9,7 +9,7 @@ import 'swiper/css/effect-cube';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/zoom';
-import { ImageSlideProps } from '@/components/projectBody/projectSlide';
+import { ImageSlideProps } from '@/components/pages/project/projectSlide';
 
 
 export interface CardSlideProps {

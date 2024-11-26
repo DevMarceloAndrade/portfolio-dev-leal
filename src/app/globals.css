@@ -26,7 +26,7 @@
   }
 
   .pageLink{
-    @apply flex gap-2 items-center md:text-2xl transition-all;
+    @apply flex gap-2 items-center text-end md:text-2xl transition-all;
   }
   .pageLink:hover{
     @apply scale-125 transition-all;

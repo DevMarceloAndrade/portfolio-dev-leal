@@ -1,4 +1,4 @@
-import { projects } from "@/components/projects"
+import { projects } from "@/data/projects"
 import ProjectCard from "./projectCard"
 
 const ProjectsSection = ()=>{

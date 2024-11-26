@@ -1,4 +1,4 @@
-import HomeBody from "@/components/homeBody";
+import HomeBody from "@/components/pages/home";
 
 
 

@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import MoveDown from "@/components/moveDown";
+import MoveDown from "@/components/common/moveDown";
 import ProjectsSection from './projectsSection';
-import aboutMeImg from '../../../public/aboutMe.svg'
 import BtnCurriculum from './btnCurriculum'
 const HomeBody = () => {
 
@@ -35,7 +34,7 @@ const HomeBody = () => {
                     </div>
                     <BtnCurriculum />
                 </div>
-                    <Image className='w-4/6 rounded-b-full md:w-1/2 md:mx-auto lg:m-0 lg:self-start xl:w-1/3' src={aboutMeImg} alt='logo' width={500} height={550} />
+                    <Image className='w-4/6 rounded-b-full md:w-1/2 md:mx-auto lg:m-0 lg:self-start xl:w-1/3' src='/common/aboutMe.svg' alt='logo' width={500} height={550} />
             </div>
             <MoveDown idTarget="projects">
                 <Image
