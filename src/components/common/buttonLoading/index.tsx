@@ -12,7 +12,7 @@ const ButtonLoading = ({text}: Props) => {
             <button type="submit" className='buttonBlue w-1/2 justify-center self-center mt-3'>
                 {
                     pending ? 
-                        <div className="self-center border-4 border-t-blue-600 rounded-full h-8 animate-rotate" ></div>
+                        <div className="self-center border-4 border-t-blue-600 rounded-full h-8 w-8 bg-transparent animate-rotate" ></div>
                     : text
                 }
             </button>
