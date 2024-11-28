@@ -2,11 +2,13 @@ import { sendEmail } from '@/service/resendServices';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
+import ButtonLoading from '../buttonLoading';
 
 
 const ContactModal = async () => {
-
+    const cookieConfirmEmail = (await cookies()).get('sendEmail')?.value
     const cookieControl = (await cookies()).get('contactModal')?.value
+
     const classModal = `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 rounded-2xl trasition-all duration-1000 ease-in-out ${cookieControl === 'open' ? 'p-8 w-5/6 md:w-1/2 h-auto bg-[#2e3038] flex flex-col gap-4' : 'bg-transparent w-80 h-px'} `
 
     const modalAction = async () => {
@@ -22,7 +24,13 @@ const ContactModal = async () => {
         const email = form.get('email')?.toString()
         const message = form.get('message')?.toString()
 
-        if (message && email) await sendEmail(email, message)
+        if (message && email) {
+            await sendEmail(email, message).then(async() => {
+                (await cookies()).set('sendEmail', 'true', { maxAge: 60 * 5 })
+            }).catch(async(error) => {
+                (await cookies()).set('sendEmail', JSON.stringify(error), { maxAge: 60 * 5 })
+            })
+        }
     }
     return (
         <div>
@@ -53,7 +61,12 @@ const ContactModal = async () => {
                         <h2>Envie seu e-mail aqui:</h2>
                         <input type="email" className='textInput max-h-10' name='email' placeholder='Seu email' required />
                         <textarea className='textInput min-h-24' name='message' placeholder='Mensagem' required />
-                        <button type="submit" className='buttonBlue w-1/2 justify-center self-center mt-3' >Enviar</button>
+                        <ButtonLoading text={'ENVIAR'} />
+                        {
+                            cookieConfirmEmail === 'true' ?
+                                <p className='textParagraph text-center text-green-400'>E-mail enviado com sucesso!</p>
+                                : <></>
+                        }
                     </>
                     : <></>
                 }

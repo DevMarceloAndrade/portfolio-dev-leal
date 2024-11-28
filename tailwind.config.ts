@@ -12,11 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      transitionDuration: {
-        0: "0ms",
-        1500: "1500ms",
-        2000: "2000ms",
-      }
+      animation: {
+        rotate: "rotate 2s linear infinite",
+      },
     },
   },
   plugins: [],

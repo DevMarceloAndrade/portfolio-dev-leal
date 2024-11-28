@@ -4,6 +4,16 @@
 
 
 @layer components{
+  @keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+  
+    to {
+        transform: rotate(360deg);
+    }
+  }
+
   .titleH1{
     @apply text-3xl md:text-4xl mt-12;
   }
@@ -53,7 +63,9 @@
     @apply bg-black bg-opacity-50 outline-blue-600;
   }
 
-}
+};
+
+
 
 :root {
   --background: #ffffff;
