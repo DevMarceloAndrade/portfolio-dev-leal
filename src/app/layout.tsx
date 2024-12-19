@@ -13,7 +13,7 @@ const tomorrow = Tomorrow({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Marcelo Andrade",
+  title: "Portifolio Dev Marcelo Andrade",
   description: "Portifolio do desenvolvedor Marcelo Andrade",
   metadataBase: new URL("https://marceloandradedev.vercel.app"),
 };
