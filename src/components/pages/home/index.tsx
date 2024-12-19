@@ -8,7 +8,7 @@ const HomeBody = () => {
         <div className="flex flex-col items-center">
             <div className='p-8 flex justify-center items-center flex-wrap-reverse lg:flex-nowrap md:justify-between md:p-0'>
                 <div className='lg:w-1/2'>
-                    <img className='mt-8' src="https://readme-typing-svg.herokuapp.com/?color=0073fa&size=40&vCenter=true&width=1000&lines=Ol%C3%A1,+Meu+nome+%C3%A9+Marcelo;Eu+tenho+26+anos,+sou+do+Brasil;Desenvolvedor+FullStack+Web;Seja+Bem+Vindo!+:%29" alt="Typing SVG">
+                    <img className='mt-8' src="https://readme-typing-svg.herokuapp.com/?color=0073fa&size=40&vCenter=true&width=1000&lines=Ol%C3%A1,+Meu+nome+%C3%A9+Marcelo;Tenho+26+anos;Sou+Desenvolvedor+FullStack+Web;Seja+Bem+Vindo!+:%29" alt="Typing SVG">
                     </img>
                     <h1 className='titleH1'>Desenvolvedor Web|</h1>
                     <p className='textParagraph'>
