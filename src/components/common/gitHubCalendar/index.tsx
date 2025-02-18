@@ -16,7 +16,7 @@ const GitHubContributions = () => {
                         totalCount:' '
                     }
                 }
-                username="Ellucidator"
+                username="DevMarceloAndrade"
                 
             />
         </div>
