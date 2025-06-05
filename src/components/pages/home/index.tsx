@@ -12,15 +12,15 @@ const HomeBody = () => {
                     </img>
                     <h1 className='titleH1'>Desenvolvedor Web|</h1>
                     <p className='textParagraph'>
-                        Olá muito prazer! Eu sou o Marcelo, Desenvolvedor Full Stack e acadêmico em Análise e Desenvolvimento de Sistemas, com experiencia em desenvolvimento web.
+                        Muito prazer! Sou um desenvolvedor Full Stack Web com foco na criação de aplicações modernas, com código limpo, escalável e colaborativo, sempre visando uma experiência otimizada e agradável para o usuário final.
                         <br />
-                        Minhas principais competencias estão ligadas a criação de API Rest e Websites.
+                        Movido pela curiosidade, gosto de resolver problemas de forma inteligente e eficiente, buscando constantemente soluções claras e performáticas.
                         <br />
+                        Sou grato por poder me expressar por meio do código e apaixonado por tecnologia e pelo impacto positivo que ela pode gerar na vida das pessoas.
                         <br />
-                        Sou pessoalmente apaixonado por tecnologia, principalmente a area da computação, que sempre esteve presente em minha vida, estou sempre em busca de novos desafios, com o objetivo de me tornar um desenvolvedor melhor e buscar a solução de problemas de forma eficiente e criativa por meio da programação.
+                        Minha meta? Aprender um pouco mais todos os dias e contribuir com projetos que façam a diferença.
                         <br />
                         Ademais fico feliz em apresentar meus projetos e trabalhos, que podem ser acessados logo abaixo.
-
                     </p>
                     <h2 className='titleH1 md:mt-28'>Principais Competencias|</h2>
                     <div className='flex flex-wrap justify-between gap-4 mt-8'>
