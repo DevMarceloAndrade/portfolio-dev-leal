@@ -11,7 +11,7 @@
   "dependencies": {
     "@next/third-parties": "^15.0.3",
     "babel-plugin-react-compiler": "^19.0.0-beta-0dec889-20241115",
-    "next": "^15.0.3",
+    "next": "15.0.7",
     "punycode": "^2.3.1",
     "react": "^18",
     "react-dom": "^18",
