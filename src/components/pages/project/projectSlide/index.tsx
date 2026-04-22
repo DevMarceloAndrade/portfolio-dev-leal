@@ -1,64 +1,45 @@
-'use client'
-import { Navigation, Pagination, Zoom, EffectCube, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
+﻿'use client';
 
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/effect-cube';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/zoom';
+import Image from "next/image";
+import { A11y, Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { ProjectImage } from "@/data/projects";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-export interface ImageSlideProps {
-    src: string,
-    alt: string
-}
 export interface ProjectSlideProps {
-    images: ImageSlideProps[]
-}
-const ProjectSlide = ({images}: ProjectSlideProps) => {
-
-    return (
-        <>
-            <Swiper
-                effect={'cube'}
-                navigation={true}
-                pagination={{
-                    clickable: true,
-                }}
-                
-                rewind={true}
-                cubeEffect={{
-                    shadow: true,
-                    slideShadows: true,
-                    
-                }}
-                zoom={true}
-                autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true
-                }}
-                
-                modules={[EffectCube, Navigation, Pagination, Zoom, Autoplay]}
-                className="w-full lg:w-2/4"
-            >
-                {
-                    images.map((image, index) => {
-                        return (
-                            <SwiperSlide key={index} className='bg-center bg-cover'>
-                                <div className='swiper-zoom-container' >
-                                    <Image className='w-full block' src={image.src} alt={image.alt} width={1900} height={1080}/>
-                                </div>
-                            </SwiperSlide>
-                        )
-                    })
-                }
-            </Swiper>
-        </>
-    )
+  images: ProjectImage[];
 }
 
-export default ProjectSlide
+const ProjectSlide = ({ images }: ProjectSlideProps) => {
+  return (
+    <Swiper
+      modules={[A11y, Navigation, Pagination, Keyboard, Autoplay]}
+      navigation
+      pagination={{ clickable: true }}
+      keyboard
+      loop={images.length > 1}
+      autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+      className="surface-panel h-full w-full overflow-hidden"
+    >
+      {images.map((image, index) => (
+        <SwiperSlide key={`${image.src}-${index}`} className="bg-[#f8ede2]">
+          <div className="relative aspect-video w-full">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};
+
+export default ProjectSlide;

@@ -1,25 +1,47 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import MoveDown from '../common/moveDown'
-import GitHubContributions from '../common/gitHubCalendar'
-import ContactModal from '../common/serverModal'
-const Header = ()=>{
-    return (
-        <>
-            <header className='flex flex-wrap gap-2 justify-center items-center py-2  md:justify-between'>
-                <Link href={'/'} className='md:w-64 lg:w-auto'>
-                    <Image src='/common/logoHeader.svg' alt='logo' width={300} height={100}/>
-                </Link>
-                <GitHubContributions />
-                <div className='flex gap-3'>
-                    <Link href={'/'} className='link'>INICIO</Link>
-                    <MoveDown className='link' idTarget="projects">PROJETOS</MoveDown>
-                    <ContactModal />
-                </div>
-            </header>
-        </>
-    )
-}
+﻿import Link from "next/link";
 
+const navLinks = [
+  { href: "/#skills", label: "Skills" },
+  { href: "/#projetos", label: "Projetos" },
+  { href: "/#atividade", label: "Atividade" },
+  { href: "/#contato", label: "Contato" },
+];
 
-export default Header
+const Header = () => {
+  return (
+    <header className="sticky top-0 z-50 px-2 pt-4 md:px-4">
+      <div className="section-shell surface-panel flex flex-wrap items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="ring-glow inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#111111] text-sm font-black text-white">
+            ML
+          </span>
+          <span className="font-display text-lg font-extrabold uppercase tracking-[0.12em]">Marcelo Leal</span>
+        </Link>
+
+        <nav className="hidden items-center gap-4 md:flex">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="link-ghost no-underline">
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href="https://github.com/DevMarceloAndrade"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            GitHub
+          </Link>
+          <Link href="/#contato" className="btn-primary">
+            Vamos conversar
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

@@ -1,166 +1,147 @@
-import Link from "next/link";
-import { ProjectBodyProps } from "@/components/pages/project"; 
+﻿export interface ProjectImage {
+    src: string
+    alt: string
+}
 
-export const projects: ProjectBodyProps[] = [
+export interface ProjectMetric {
+    label: string
+    value: string
+}
+
+export interface ProjectLink {
+    href: string
+    text: string
+}
+
+export interface PortfolioProject {
+    id: string
+    title: string
+    tagline: string
+    summary: string
+    role: string
+    year: string
+    stack: string[]
+    overview: string[]
+    highlights: string[]
+    metrics: ProjectMetric[]
+    links: ProjectLink[]
+    images: ProjectImage[]
+}
+
+export const projects: PortfolioProject[] = [
     {
-        projectName: "WebSite E-Commerce|",
-        images: [
-            {
-                src: '/projects/01/home.png',
-                alt: 'home'
-            },
-            {
-                src: '/projects/01/products.png',
-                alt: 'products'
-            },
-            {
-                src: '/projects/01/product.png',
-                alt: 'product'
-            },
-            {
-                src: '/projects/01/cart.png',
-                alt: 'cart'
-            },
-            {
-                src: '/projects/01/userHome.png',
-                alt: 'userHome'
-            },
-            {
-                src: '/projects/01/purchase.png',
-                alt: 'purchase'
-            },
-            {
-                src: '/projects/01/register.png',
-                alt: 'register'
-            },
-            {
-                src: '/projects/01/login.png',
-                alt: 'login'
-            }
+        id: "1",
+        title: "E-Commerce Full Stack",
+        tagline: "Plataforma de vendas com checkout completo e experiência orientada a conversão.",
+        summary: "Loja online responsiva com catálogo, carrinho, checkout e painel de conta para clientes.",
+        role: "Desenvolvedor Full Stack",
+        year: "2025",
+        stack: ["TypeScript", "React", "Next.js", "SCSS", "Mercado Pago", "Melhor Envio"],
+        overview: [
+            "A aplicação foi construída para oferecer uma jornada de compra fluida, com foco em performance, clareza visual e conversão.",
+            "A arquitetura prioriza componentes reaproveitáveis, regras de negócio separadas por domínio e integração com serviços de pagamento e logística."
+        ],
+        highlights: [
+            "Catálogo com filtros, busca e ordenação por critérios dinâmicos.",
+            "Página de produto com recomendação, avaliações e simulação de frete.",
+            "Fluxo completo de carrinho, checkout e pagamento via Mercado Pago.",
+            "Painel do cliente com histórico, dados de conta e acompanhamento de pedidos."
+        ],
+        metrics: [
+            { label: "Telas", value: "8+" },
+            { label: "Integrações", value: "2" },
+            { label: "Stack principal", value: "Next.js" }
         ],
         links: [
-            {
-                href: 'https://github.com/Ellucidator/project_sst_v.3_front',
-                text: 'Acesse o Repositório'
-            },
-            {
-                href: 'https://project-sst-v-3-front.vercel.app/',
-                text: 'Acesse o Beta'
-            }
+            { href: "https://github.com/Ellucidator/project_sst_v.3_front", text: "Ver repositório" },
+            { href: "https://project-sst-v-3-front.vercel.app/", text: "Abrir demonstração" }
         ],
-        descriptionChildren: (
-            <div>
-                O projeto WebSite E-Commerce foi desenvolvido com o objetivo de fornecer uma plataforma para venda de produtos online.
-                <br />
-                Procurando sempre oferecer aos clientes uma experiencia de compra agradavel e confortavel foi implementado diversas funcionalidades, dentre as principais podemos destacar:
-                <ol className='list-disc list-inside flex flex-col gap-2 mt-2'>
-                    <li className='ml-4'><strong>Pagina inicial:</strong> Que oferece uma visao geral da loja e os principais produtos disponiveis. </li>
-                    <li className='ml-4'><strong>Pagina de produtos:</strong> Onde o cliente pode filtrar,buscar e ordenar os produtos de acordo com suas necessidades.</li>
-                    <li className='ml-4'><strong>Pagina de detalhes:</strong> Que apresenta os detalhes do produto selecionado, produtos recomendados, avaliacoes e comentarios além da possibilidade de verificar o preço do frete.</li>
-                    <li className='ml-4'><strong>Carrinho/checkout/pagamento:</strong> Que permite ao cliente adicionar, remover, conferir ou alterar as informacoes pessoais e seguir para o pagamento via MercadoPago.</li>
-                    <li className='ml-4'><strong>Painel de usuario:</strong> Painel de usuario completo com funcoes de gerenciamento de informações pessoais e vizualizacao de historico de compras.</li>
-                </ol>
-                <p className='mt-4 font-bold'>
-                    Tecnologias: Typescript, React, Next.js, Scss, SplideJs API Melhor Envio, API MercadoPago, 
-                    <Link className="text-blue-400 underline" href="/projects/2"> Rest API E-commerce</Link>.
-                </p>
-            </div>
-        )
+        images: [
+            { src: "/projects/01/home.png", alt: "Página inicial do e-commerce" },
+            { src: "/projects/01/products.png", alt: "Listagem de produtos" },
+            { src: "/projects/01/product.png", alt: "Detalhes de produto" },
+            { src: "/projects/01/cart.png", alt: "Carrinho de compras" },
+            { src: "/projects/01/userHome.png", alt: "Painel de usuário" },
+            { src: "/projects/01/purchase.png", alt: "Fluxo de compra" },
+            { src: "/projects/01/register.png", alt: "Cadastro de usuário" },
+            { src: "/projects/01/login.png", alt: "Tela de login" }
+        ]
     },
     {
-        projectName: "Rest API + Painel Administrativo|",
-        images: [
-            {
-                src: '/projects/02/project_sst.svg',
-                alt: 'userHome'
-            },
-            {
-                src: '/projects/02/products.png',
-                alt: 'products'
-            },
-            {
-                src: '/projects/02/createProduct.png',
-                alt: 'product'
-            },
-            {
-                src: '/projects/02/promotion.png',
-                alt: 'cart'
-            },
-            {
-                src: '/projects/02/purchase.png',
-                alt: 'userHome'
-            },
-            {
-                src: '/projects/02/login.png',
-                alt: 'purchase'
-            },
-            {
-                src: '/projects/02/postman.png',
-                alt: 'purchase'
-            }
+        id: "2",
+        title: "REST API + Painel Admin",
+        tagline: "Backoffice para operação de loja com monitoramento e automação de processos.",
+        summary: "API robusta para e-commerce, conectada a um painel administrativo com rotinas de gestão.",
+        role: "Backend + Plataforma",
+        year: "2025",
+        stack: ["TypeScript", "Express", "Sequelize", "PostgreSQL", "JWT", "AdminJS"],
+        overview: [
+            "Projeto desenhado para centralizar gestão de catálogo, pedidos e promoções em um único painel administrativo.",
+            "A API expõe endpoints seguros e estruturados para consumo do front-end e integrações externas."
+        ],
+        highlights: [
+            "Dashboard com indicadores de vendas e receita anual.",
+            "CRUD completo de produtos com filtros e marcações comerciais.",
+            "Integração de pagamento sincronizada com atualização de status no banco.",
+            "Notificações em tempo real para cliente e operação."
+        ],
+        metrics: [
+            { label: "Endpoints", value: "25+" },
+            { label: "Módulos", value: "Admin + API" },
+            { label: "Banco", value: "PostgreSQL" }
         ],
         links: [
-            {
-                href: 'https://github.com/Ellucidator/project_sst_V.3',
-                text: 'Acesse o Repositório'
-            },
-            {
-                href: 'https://devleal.com.br/admin',
-                text: 'Acesse o Beta'
-            }
+            { href: "https://github.com/Ellucidator/project_sst_V.3", text: "Ver repositório" },
+            { href: "https://devleal.com.br/admin", text: "Abrir demonstração" }
         ],
-        descriptionChildren: (
-            <div>
-                O sistema Rest API E-Commerce foi desenvolvido com o objetivo de fornecer uma plataforma para gerenciamento de produtos online e os end points necessarios para o funcionamento da loja.
-                <br />
-                Procurando oferecer uma experiencia completa e intuitiva foi implementado diversas funcionalidades, dentre as principais podemos destacar:
-                <ol className='list-disc list-inside flex flex-col gap-2 mt-2'>
-                    <li className='ml-4'><strong>Pagina inicial:</strong> Com graficos indicativos de vendas e valor arrecadado no periodo de um ano. </li>
-                    <li className='ml-4'><strong>Paginas de gerenciamento CRUD:</strong> Onde o administrador pode cadastrar, editar e deletar produtos com diversas marcações e filtros.</li>
-                    <li className='ml-4'><strong>Sistema de pagamentos:</strong> Sistema seguro de pagamento via MercadoPago interagindo diretamento com as informações e atualizações do banco de dados.</li>
-                    <li className='ml-4'><strong>Notificação em tempo real:</strong> Notificação em tempo real para o cliente e o administrador, sobre alterações no sistema de pagamento via whatsapp.</li>
-                </ol>
-                <p className='mt-4 font-bold'>
-                    Tecnologias: TypeScript, Sequelize, Express, PostgresSQL, bcrypt, JWT, AdminJs e API MercadoPago. 
-                </p>
-            </div>
-        )
+        images: [
+            { src: "/projects/02/project_sst.svg", alt: "Identidade do projeto admin" },
+            { src: "/projects/02/products.png", alt: "Gerenciamento de produtos" },
+            { src: "/projects/02/createProduct.png", alt: "Criação de produto" },
+            { src: "/projects/02/promotion.png", alt: "Configuração de promoção" },
+            { src: "/projects/02/purchase.png", alt: "Gestão de pedidos" },
+            { src: "/projects/02/login.png", alt: "Autenticação do painel" },
+            { src: "/projects/02/postman.png", alt: "Coleção de testes da API" }
+        ]
     },
     {
-        projectName: "Portifolio|",
-        images: [
-            {
-                src: '/projects/03/home.png',
-                alt: 'home'
-            },
-            {
-                src: '/projects/03/project.png',
-                alt: 'products'
-            }
+        id: "3",
+        title: "Portfólio Pessoal",
+        tagline: "Experiência digital para posicionamento profissional e apresentação de projetos.",
+        summary: "Site institucional com foco em branding pessoal, narrativa técnica e contato profissional.",
+        role: "Design + Front-end",
+        year: "2026",
+        stack: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Swiper"],
+        overview: [
+            "O portfólio foi pensado como uma peça de produto: conteúdo estratégico, design autoral e navegação objetiva.",
+            "Além da vitrine de projetos, a estrutura prioriza leitura rápida para recrutadores, líderes técnicos e potenciais clientes."
+        ],
+        highlights: [
+            "Página inicial com proposta de valor e provas de execução.",
+            "Páginas individuais para cada case com contexto técnico.",
+            "Sessão de contato direto com envio de mensagem.",
+            "Layout responsivo e otimizado para mobile e desktop."
+        ],
+        metrics: [
+            { label: "Velocidade", value: "Otimizada" },
+            { label: "Arquitetura", value: "App Router" },
+            { label: "Objetivo", value: "Conversão" }
         ],
         links: [
-            {
-                href: 'https://github.com/Ellucidator/portfolio-dev-leal',
-                text: 'Acesse o Repositório'
-            },
-            {
-                href: '/',
-                text: 'Acesse o Beta'
-            }
+            { href: "https://github.com/Ellucidator/portfolio-dev-leal", text: "Ver repositório" },
+            { href: "/", text: "Abrir site" }
         ],
-        descriptionChildren: (
-            <div>
-                O Portifolio foi desenvolvido com o objetivo de apresentar o meu trabalho e meus projetos.
-                <br />
-                Procurando oferecer uma interface elegante e intuitiva foi construido de maneira que seja facil de navegar e entender o conteudo apresentado.
-                <ol className='list-disc list-inside flex flex-col gap-2 mt-2'>
-                    <li className='ml-4'><strong>Pagina inicial:</strong> Com uma breve apresentação sobre mim e meus projetos. </li>
-                    <li className='ml-4'><strong>Paginas de projeto:</strong> Onde são apresentados os principais projetos desenvolvidos e suas principais caracteristicas.</li>
-                </ol>
-                <p className='mt-4 font-bold'>
-                    Tecnologias: TypeScript, React, Next.js, Tailwind, CSS, Swiper. 
-                </p>
-            </div>
-        )
+        images: [
+            { src: "/projects/03/home.png", alt: "Home do portfólio" },
+            { src: "/projects/03/project.png", alt: "Página de projeto do portfólio" }
+        ]
     }
 ]
+
+export function getProjectById(id: string): PortfolioProject | undefined {
+    return projects.find((project) => project.id === id)
+}
+
+export function getProjectIndex(id: string): number {
+    return projects.findIndex((project) => project.id === id)
+}

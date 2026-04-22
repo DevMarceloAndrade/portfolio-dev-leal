@@ -1,36 +1,35 @@
-
-import Image from 'next/image'
-import Link from "next/link"
+﻿import Link from "next/link";
+import { projects } from "@/data/projects";
 
 type Props = {
-    position: number
-}
-const ProjectPagination = ({position}:Props)=>{ 
-    const pathLinks =[['/','INICIO'],['/project/01','WebSite E-Commerce'],['/project/02','Rest API + Painel Administrativo'],['/project/03','Portifolio'],['/contact','CONTATOS']]
+  position: number;
+};
 
-    return (
-        <>
-            <div className="mb-4 md:mb-8 flex gap-4 md:gap-32 justify-center">              
-                    {
-                        position > 0? 
-                            <Link href={pathLinks[position -1][0]} type="submit" className="pageLink">
-                                <Image src={'/positionIcons/prev.svg'} alt='arrow' width={50} height={50}/>
-                                {pathLinks[position -1][1]}
-                            </Link>
-                        :<></>
-                    }
-                    {
-                        position < 3? 
-                            <Link href={pathLinks[position +1][0]} type="submit" className="pageLink">
-                                {pathLinks[position +1][1]}
-                                <Image src={'/positionIcons/nex.svg'} alt='arrow' width={50} height={50}/>
-                            </Link>
-                        :<></>
-                    }
-            </div>
-        </>
-    )
-}
+const ProjectPagination = ({ position }: Props) => {
+  const previousProject = position > 0 ? projects[position - 1] : null;
+  const nextProject = position < projects.length - 1 ? projects[position + 1] : null;
 
+  return (
+    <nav className="section-shell mb-14 mt-2 flex flex-wrap items-center justify-between gap-3">
+      {previousProject ? (
+        <Link href={`/project/${previousProject.id}`} className="btn-secondary">
+          ← {previousProject.title}
+        </Link>
+      ) : (
+        <span />
+      )}
 
-export default ProjectPagination
+      {nextProject ? (
+        <Link href={`/project/${nextProject.id}`} className="btn-primary">
+          {nextProject.title} →
+        </Link>
+      ) : (
+        <Link href="/" className="btn-primary">
+          Voltar para a home
+        </Link>
+      )}
+    </nav>
+  );
+};
+
+export default ProjectPagination;

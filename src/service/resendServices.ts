@@ -1,17 +1,30 @@
-import { Resend } from "resend";
+﻿import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function sendEmail(name: string,email: string) {
-    'use server'
-    return resend.emails.send({
-        from: `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM_EMAIL}>`,
-        to: 'andradefj13@hotmail.com',
-        subject: `${name} enviou um email para contato via portfolio.`,
-        text: email,
-    }).then(() => {
-        return true
-    }).catch((error) => {
-        throw new Error(error)
-    })
+export async function sendEmail(senderEmail: string, message: string) {
+  "use server";
+
+  const fromName = process.env.EMAIL_FROM_NAME;
+  const fromEmail = process.env.EMAIL_FROM_EMAIL;
+  const contactEmail = process.env.CONTACT_TO_EMAIL ?? "andradefj13@hotmail.com";
+
+  if (!fromName || !fromEmail) {
+    throw new Error("Configuração de e-mail incompleta.");
+  }
+
+  try {
+    await resend.emails.send({
+      from: `${fromName} <${fromEmail}>`,
+      to: contactEmail,
+      subject: `Novo contato via portfólio (${senderEmail})`,
+      text: message,
+      replyTo: senderEmail,
+    });
+
+    return true;
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : "Erro inesperado no serviço de e-mail.";
+    throw new Error(reason);
+  }
 }

@@ -1,24 +1,28 @@
-import Link from "next/link"
-import Image from "next/image"
-const BtnCurriculum = () => {
-    return (
-        <div className="my-12 flex gap-4">
-            <Link 
-                href={'/curriculum/curriculo-marcelo-andrade.pdf'} target="_blank" rel="noopener noreferrer"
-                className='buttonBlue'
-            >
-                BAIXAR CURRICULO
-                <Image src={'/commonIcons/file-earmark-arrow-down.svg'} alt='pdf' width={30} height={30}/>
-            </Link>
-            <Link 
-                href={'https://github.com/DevMarceloAndrade'} target="_blank" rel="noopener noreferrer"
-                className='buttonBlue'
-            >
-                ACESSAR GITHUB
-                <Image src={'/commonIcons/github.svg'} alt='pdf' width={30} height={30}/>
-            </Link>
-        </div>
-    )
-}
+﻿import Image from "next/image";
+import Link from "next/link";
 
-export default BtnCurriculum
+const BtnCurriculum = () => {
+  return (
+    <div className="flex flex-wrap gap-3">
+      <Link
+        href="/curriculum/curriculo-marcelo-andrade.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-primary"
+      >
+        Baixar currículo
+        <Image src="/commonIcons/file-earmark-arrow-down.svg" alt="Ícone de download" width={20} height={20} />
+      </Link>
+      <Link
+        href="https://www.linkedin.com/in/dev-marcelo-leal/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-secondary"
+      >
+        LinkedIn
+      </Link>
+    </div>
+  );
+};
+
+export default BtnCurriculum;

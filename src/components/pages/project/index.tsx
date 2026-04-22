@@ -1,41 +1,85 @@
-import Link from "next/link"
-import ProjectSlide, { ImageSlideProps } from "./projectSlide"
+﻿import Link from "next/link";
+import type { PortfolioProject } from "@/data/projects";
+import ProjectSlide from "./projectSlide";
 
-interface AcessLinks {
-    href: string
-    text: string
-}
-export interface ProjectBodyProps {
-    descriptionChildren?: React.ReactNode
-    images:ImageSlideProps[]
-    links: AcessLinks[]
-    projectName: string
+type Props = {
+  project: PortfolioProject;
+};
 
-}
-const ProjectBody = ({ descriptionChildren, images, links, projectName }: ProjectBodyProps) => {
-    return (
-        <>
-            <div className="p-2 flex flex-col gap-4 lg:p-0 lg:gap-0">
-                <h1 className='text-3xl mb-8 md:text-4xl'>{projectName}</h1>
-                <div className='flex justify-between'>
-                    {
-                        links.map((link, index) => {
-                            return (
-                                <Link key={index} className='buttonBlue' target="_blank" rel="noopener noreferrer" href={link.href}>{link.text}</Link>
-                            )
-                        })
-                    }
-                </div>
-                <div className='flex flex-wrap justify-start gap-4 mt-4 lg:flex-nowrap'>
-                    <ProjectSlide images={images} />
-                    <div className='px-4 pb-6 flex flex-col bg-opacity-35 rounded-2xl bg-black'>
-                        <h2 className='text-2xl my-8 '>Descrição|</h2>
-                        {descriptionChildren}
-                    </div>
-                </div>
+const ProjectBody = ({ project }: Props) => {
+  return (
+    <article className="section-shell pb-16 pt-10 md:pb-20">
+      <Link href="/" className="link-ghost no-underline">
+        ← Voltar para a home
+      </Link>
+
+      <header className="mt-6 space-y-5">
+        <span className="chip">Case {project.id}</span>
+        <h1 className="section-title text-balance">{project.title}</h1>
+        <p className="max-w-3xl text-lg text-[var(--muted)]">{project.tagline}</p>
+
+        <div className="flex flex-wrap gap-3">
+          {project.links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="btn-secondary"
+            >
+              {link.text}
+            </Link>
+          ))}
+        </div>
+      </header>
+
+      <div className="mt-8 grid gap-3 sm:grid-cols-3">
+        {project.metrics.map((metric) => (
+          <div key={metric.label} className="meta-card">
+            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">{metric.label}</p>
+            <p className="mt-2 text-xl font-black">{metric.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <section className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <ProjectSlide images={project.images} />
+
+        <div className="surface-panel p-6 md:p-8">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-black">Contexto</h2>
+            {project.overview.map((paragraph) => (
+              <p key={paragraph} className="text-sm leading-relaxed text-[var(--muted)] md:text-base">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-6 space-y-4">
+            <h3 className="text-xl font-black">Entregas principais</h3>
+            <ul className="space-y-2">
+              {project.highlights.map((item) => (
+                <li key={item} className="rounded-xl border-2 border-[var(--stroke)] bg-[#fff5e9] px-3 py-2 text-sm font-medium">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-6">
+            <h3 className="text-xl font-black">Stack</h3>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.stack.map((item) => (
+                <span key={item} className="rounded-full border-2 border-[var(--stroke)] bg-[#ffe9d2] px-3 py-1 text-xs font-semibold">
+                  {item}
+                </span>
+              ))}
             </div>
-        </>
-    )
-}
+          </div>
+        </div>
+      </section>
+    </article>
+  );
+};
 
-export default ProjectBody
+export default ProjectBody;

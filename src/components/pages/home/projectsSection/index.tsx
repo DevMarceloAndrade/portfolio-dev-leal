@@ -1,20 +1,24 @@
-import { projects } from "@/data/projects"
-import ProjectCard from "./projectCard"
+﻿import { projects } from "@/data/projects";
+import ProjectCard from "./projectCard";
 
-const ProjectsSection = ()=>{
+const ProjectsSection = () => {
+  return (
+    <section id="projetos" className="mt-24 space-y-8">
+      <div>
+        <span className="chip">Projetos selecionados</span>
+        <h2 className="section-title mt-4 text-balance">Cases que conectam produto, engenharia e resultado.</h2>
+        <p className="section-subtitle">
+          Projetos reais, com decisões técnicas orientadas a experiência de usuário, escalabilidade e clareza de negócio.
+        </p>
+      </div>
 
-    return(
-        <>
-            <div className='mb-16' id="projects">
-                <h1 className='titleH1 text-center'>|Principais Projetos|</h1>
-                <div className='flex flex-wrap justify-center gap-10 mt-4'>
-                    <ProjectCard href="/project/1" imagesProps={projects[0].images} title="WebSite E-Commerce"/>
-                    <ProjectCard href="/project/2" imagesProps={projects[1].images} title="Rest API + Painel Administrativo"/>
-                    <ProjectCard href="/project/3" imagesProps={projects[2].images} title="Portifolio"/>
-                </div>
-            </div>
-        </>
-    )
-}
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    </section>
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;
