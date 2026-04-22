@@ -138,10 +138,22 @@ export const projects: PortfolioProject[] = [
     }
 ]
 
+function normalizeProjectId(id: string): string {
+    const parsed = Number.parseInt(id, 10)
+
+    if (Number.isNaN(parsed)) {
+        return id
+    }
+
+    return String(parsed)
+}
+
 export function getProjectById(id: string): PortfolioProject | undefined {
-    return projects.find((project) => project.id === id)
+    const normalizedId = normalizeProjectId(id)
+    return projects.find((project) => project.id === normalizedId)
 }
 
 export function getProjectIndex(id: string): number {
-    return projects.findIndex((project) => project.id === id)
+    const normalizedId = normalizeProjectId(id)
+    return projects.findIndex((project) => project.id === normalizedId)
 }

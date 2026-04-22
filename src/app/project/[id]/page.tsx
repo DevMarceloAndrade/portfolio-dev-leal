@@ -9,7 +9,10 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({ id: project.id }));
+  return projects.flatMap((project) => [
+    { id: project.id },
+    { id: project.id.padStart(2, "0") },
+  ]);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
