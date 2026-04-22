@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import ContactModal from "@/components/common/contactModal";
 
 const navLinks = [
   { href: "/#skills", label: "Skills" },
@@ -12,7 +13,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 px-2 pt-4 md:px-4">
       <div className="section-shell surface-panel flex flex-wrap items-center justify-between gap-4 px-4 py-3 md:px-6">
         <Link href="/" className="flex items-center gap-3">
-          <span className="ring-glow inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#111111] text-sm font-black text-white">
+          <span className="ring-glow inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#03102a] text-sm font-black text-[#e6f3ff]">
             ML
           </span>
           <span className="font-display text-lg font-extrabold uppercase tracking-[0.12em]">Marcelo Leal</span>
@@ -20,7 +21,7 @@ const Header = () => {
 
         <nav className="hidden items-center gap-4 md:flex">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="link-ghost no-underline">
+            <Link key={link.href} href={link.href} className="link-ghost">
               {link.label}
             </Link>
           ))}
@@ -35,9 +36,7 @@ const Header = () => {
           >
             GitHub
           </Link>
-          <Link href="/#contato" className="btn-primary">
-            Vamos conversar
-          </Link>
+          <ContactModal />
         </div>
       </div>
     </header>

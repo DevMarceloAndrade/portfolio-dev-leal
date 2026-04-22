@@ -1,20 +1,25 @@
-﻿import { projects } from "@/data/projects";
+﻿import Reveal from "@/components/common/reveal";
+import { projects } from "@/data/projects";
 import ProjectCard from "./projectCard";
 
 const ProjectsSection = () => {
   return (
     <section id="projetos" className="mt-24 space-y-8">
-      <div>
-        <span className="chip">Projetos selecionados</span>
-        <h2 className="section-title mt-4 text-balance">Cases que conectam produto, engenharia e resultado.</h2>
-        <p className="section-subtitle">
-          Projetos reais, com decisões técnicas orientadas a experiência de usuário, escalabilidade e clareza de negócio.
-        </p>
-      </div>
+      <Reveal>
+        <div>
+          <span className="chip">Projetos selecionados</span>
+          <h2 className="section-title mt-4 text-balance">Cases com arquitetura sólida e identidade visual forte.</h2>
+          <p className="section-subtitle">
+            Projetos reais com decisões técnicas orientadas a performance, manutenção e experiência do usuário.
+          </p>
+        </div>
+      </Reveal>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {projects.map((project, index) => (
+          <Reveal key={project.id} delay={index * 0.08}>
+            <ProjectCard project={project} />
+          </Reveal>
         ))}
       </div>
     </section>

@@ -3,8 +3,6 @@
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail(senderEmail: string, message: string) {
-  "use server";
-
   const fromName = process.env.EMAIL_FROM_NAME;
   const fromEmail = process.env.EMAIL_FROM_EMAIL;
   const contactEmail = process.env.CONTACT_TO_EMAIL ?? "andradefj13@hotmail.com";

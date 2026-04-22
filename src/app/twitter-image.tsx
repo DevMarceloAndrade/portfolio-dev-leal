@@ -20,21 +20,21 @@ export default function Image() {
           justifyContent: "space-between",
           padding: "56px",
           background:
-            "radial-gradient(circle at 8% 4%, rgba(255,100,50,0.44), transparent 42%), radial-gradient(circle at 84% 12%, rgba(15,157,149,0.26), transparent 36%), linear-gradient(170deg, #fdf6ee 0%, #ffe8cf 52%, #ffdfc4 100%)",
-          color: "#111111",
+            "radial-gradient(circle at 8% 0%, rgba(0,115,250,0.42), transparent 42%), radial-gradient(circle at 84% 12%, rgba(22,196,255,0.28), transparent 36%), linear-gradient(170deg, #030817 0%, #081737 55%, #0b2b67 100%)",
+          color: "#e8f4ff",
         }}
       >
         <div
           style={{
             display: "inline-flex",
-            border: "3px solid #111111",
+            border: "2px solid rgba(168,215,255,0.9)",
             borderRadius: "999px",
             padding: "10px 16px",
             fontSize: 24,
             fontWeight: 700,
             textTransform: "uppercase",
             letterSpacing: "0.08em",
-            background: "#fff7ee",
+            background: "rgba(0,115,250,0.15)",
           }}
         >
           Full Stack Portfolio
@@ -42,12 +42,12 @@ export default function Image() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1 }}>Marcelo Leal</div>
-          <div style={{ fontSize: 36, fontWeight: 600, color: "#37312c" }}>
+          <div style={{ fontSize: 36, fontWeight: 600, color: "#b6d9ff" }}>
             Projetos web modernos, rápidos e orientados a resultado
           </div>
         </div>
 
-        <div style={{ fontSize: 24, fontWeight: 700, color: "#5d5247" }}>@DevMarceloAndrade</div>
+        <div style={{ fontSize: 24, fontWeight: 700, color: "#8dc4ff" }}>@DevMarceloAndrade</div>
       </div>
     ),
     {
