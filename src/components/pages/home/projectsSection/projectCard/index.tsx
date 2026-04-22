@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: Props) => {
           {project.stack.slice(0, 3).map((item) => (
             <span
               key={item}
-              className="rounded-full border border-[#5b8fdebf] bg-[#0a1f4db8] px-3 py-1 text-xs font-semibold"
+              className="rounded-sm border border-[#5b8fdebf] bg-[#0a1f4db8] px-3 py-1 text-xs font-semibold"
             >
               {item}
             </span>

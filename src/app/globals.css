@@ -37,11 +37,7 @@ body {
   min-height: 100vh;
   color: var(--foreground);
   font-family: var(--font-body), "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at 10% 2%, rgba(0, 115, 250, 0.3), transparent 44%),
-    radial-gradient(circle at 88% 8%, rgba(22, 196, 255, 0.17), transparent 40%),
-    radial-gradient(circle at 54% 110%, rgba(0, 84, 206, 0.34), transparent 42%),
-    linear-gradient(160deg, var(--background), var(--background-soft) 56%, #0a1f4f 100%);
+  background: linear-gradient(160deg, var(--background), var(--background-soft) 56%, #0a1f4f 100%);
   position: relative;
   overflow-x: hidden;
 }
@@ -49,13 +45,15 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -20%;
   pointer-events: none;
-  background-image:
-    linear-gradient(transparent 0 33px, rgba(122, 176, 255, 0.12) 33px 34px),
-    linear-gradient(90deg, transparent 0 33px, rgba(122, 176, 255, 0.12) 33px 34px);
-  background-size: 34px 34px;
-  opacity: 0.22;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(0, 115, 250, 0.45), transparent 34%),
+    radial-gradient(circle at 78% 22%, rgba(22, 196, 255, 0.38), transparent 33%),
+    radial-gradient(circle at 50% 82%, rgba(0, 84, 206, 0.3), transparent 37%);
+  filter: blur(46px);
+  opacity: 0.7;
+  animation: auroraShift 13s ease-in-out infinite;
   z-index: -2;
 }
 
@@ -64,8 +62,12 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.18;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 115, 250, 0.18) 100%);
+  opacity: 0.26;
+  background:
+    linear-gradient(transparent 0 27px, rgba(123, 181, 255, 0.14) 27px 28px),
+    linear-gradient(90deg, transparent 0 27px, rgba(123, 181, 255, 0.14) 27px 28px),
+    radial-gradient(circle at center, transparent 52%, rgba(1, 6, 19, 0.74) 100%);
+  background-size: 28px 28px, 28px 28px, auto;
   mix-blend-mode: screen;
   z-index: -1;
 }
@@ -84,6 +86,8 @@ h6 {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 .layout-main {
@@ -100,7 +104,7 @@ h6 {
   }
 
   .surface-panel {
-    @apply rounded-3xl;
+    @apply rounded-md;
     border: 1px solid rgba(91, 136, 218, 0.62);
     background:
       linear-gradient(140deg, rgba(12, 34, 82, 0.82), rgba(8, 23, 58, 0.92)),
@@ -110,14 +114,14 @@ h6 {
   }
 
   .chip {
-    @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em];
+    @apply inline-flex items-center gap-2 rounded-sm border px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em];
     border-color: rgba(102, 170, 255, 0.7);
     background: rgba(0, 115, 250, 0.14);
     color: #cde3ff;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-bold uppercase tracking-[0.09em] transition duration-200;
+    @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-bold uppercase tracking-[0.09em] transition duration-200;
     color: #eaf5ff;
     border: 1px solid rgba(142, 203, 255, 0.76);
     background: linear-gradient(125deg, var(--accent), var(--accent-strong));
@@ -132,7 +136,7 @@ h6 {
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-bold uppercase tracking-[0.09em] transition duration-200;
+    @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-bold uppercase tracking-[0.09em] transition duration-200;
     color: #dcecff;
     border: 1px solid rgba(92, 151, 236, 0.78);
     background: rgba(7, 33, 80, 0.62);
@@ -155,13 +159,13 @@ h6 {
   }
 
   .meta-card {
-    @apply rounded-2xl border p-4;
+    @apply rounded-sm border p-4;
     border-color: rgba(90, 136, 214, 0.7);
     background: linear-gradient(135deg, rgba(9, 36, 89, 0.76), rgba(7, 25, 63, 0.8));
   }
 
   .input-field {
-    @apply w-full rounded-2xl border px-4 py-3 text-sm font-medium outline-none transition;
+    @apply w-full rounded-sm border px-4 py-3 text-sm font-medium outline-none transition;
     border-color: rgba(88, 144, 231, 0.82);
     background: rgba(4, 16, 42, 0.86);
     color: #deecff;
@@ -380,6 +384,39 @@ h6 {
     position: relative;
     z-index: 1;
   }
+
+  .app-tech-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .app-tech-particles {
+    position: absolute;
+    inset: -12%;
+    opacity: 0.32;
+    background-image:
+      radial-gradient(circle, rgba(194, 229, 255, 0.8) 1px, transparent 1.4px),
+      radial-gradient(circle, rgba(70, 214, 255, 0.52) 1px, transparent 1.8px);
+    background-size: 130px 130px, 190px 190px;
+    background-position: 0 0, 70px 40px;
+    animation: particleFieldShift 34s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(20, 191, 255, 0.45));
+  }
+
+  .app-tech-scanline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(70, 214, 255, 0.86), transparent);
+    box-shadow: 0 0 14px rgba(70, 214, 255, 0.68);
+    opacity: 0.7;
+    animation: scanlineSweep 4.2s ease-in-out infinite;
+  }
 }
 
 @keyframes pulseGlow {
@@ -458,8 +495,87 @@ h6 {
   }
 }
 
+@keyframes particleFieldShift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-30px, -24px, 0);
+  }
+
+  100% {
+    transform: translate3d(-60px, -48px, 0);
+  }
+}
+
 @media (max-width: 640px) {
   .layout-main {
     padding: 0 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  body::before {
+    inset: -16%;
+    opacity: 0.4;
+    filter: blur(34px);
+    animation-duration: 18s;
+  }
+
+  body::after {
+    opacity: 0.14;
+    background-size: 42px 42px, 42px 42px, auto;
+  }
+
+  .app-tech-particles {
+    opacity: 0.15;
+    background-size: 180px 180px, 260px 260px;
+    animation-duration: 52s;
+    filter: drop-shadow(0 0 5px rgba(20, 191, 255, 0.26));
+  }
+
+  .app-tech-scanline {
+    opacity: 0.24;
+    animation-duration: 7s;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-tech-scanline {
+    opacity: 0.14;
+  }
+}
+
+@media (min-width: 1024px) {
+  body::before {
+    opacity: 0.78;
+    filter: blur(54px);
+  }
+
+  body::after {
+    opacity: 0.32;
+    background-size: 26px 26px, 26px 26px, auto;
+  }
+
+  .app-tech-particles {
+    opacity: 0.38;
+    background-size: 120px 120px, 175px 175px;
+    animation-duration: 30s;
+    filter: drop-shadow(0 0 10px rgba(20, 191, 255, 0.52));
+  }
+
+  .app-tech-scanline {
+    opacity: 0.84;
+    animation-duration: 4s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .app-tech-particles,
+  .app-tech-scanline,
+  .modal-tech-aurora {
+    animation: none !important;
   }
 }

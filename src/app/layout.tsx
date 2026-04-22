@@ -54,6 +54,10 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-M6D4ZBFG" />
       <GoogleAnalytics gaId="G-W09Q9BNGBR" />
       <body className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable}`}>
+        <div className="app-tech-bg" aria-hidden>
+          <div className="app-tech-particles" />
+          <div className="app-tech-scanline" />
+        </div>
         <div className="layout-shell">
           <Header />
           <main className="layout-main">{children}</main>

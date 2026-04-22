@@ -169,7 +169,7 @@ const ContactModal = ({ label = 'Vamos conversar', className = 'btn-primary btn-
                 </div>
                 <button
                   type="button"
-                  className="btn-secondary h-10 w-10 shrink-0 rounded-xl p-0 text-lg"
+                  className="btn-secondary h-10 w-10 shrink-0 rounded-sm p-0 text-lg"
                   onClick={() => setIsOpen(false)}
                   aria-label="Fechar modal"
                 >
@@ -214,12 +214,12 @@ const ContactModal = ({ label = 'Vamos conversar', className = 'btn-primary btn-
                 </button>
 
                 {status === 'success' && (
-                  <p className="rounded-xl border border-emerald-400/50 bg-emerald-500/15 px-3 py-2 text-sm font-semibold text-emerald-200">
+                  <p className="rounded-sm border border-emerald-400/50 bg-emerald-500/15 px-3 py-2 text-sm font-semibold text-emerald-200">
                     Mensagem enviada com sucesso.
                   </p>
                 )}
                 {status === 'error' && (
-                  <p className="rounded-xl border border-rose-400/50 bg-rose-500/15 px-3 py-2 text-sm font-semibold text-rose-200">
+                  <p className="rounded-sm border border-rose-400/50 bg-rose-500/15 px-3 py-2 text-sm font-semibold text-rose-200">
                     Não foi possível enviar agora. Tente novamente em instantes.
                   </p>
                 )}

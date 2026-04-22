@@ -47,7 +47,7 @@ const HomeBody = () => {
                 <br />
                 pronto para acelerar
                 <br />
-                seu time de produto.
+                as entregas da sua empresa.
               </h1>
               <p className="max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">
                 Sou Marcelo Leal. Especialista em construir interfaces e APIs que transformam requisitos de negócio em
@@ -82,7 +82,7 @@ const HomeBody = () => {
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#9fc9ff]">Por que contratar</p>
               <ul className="mt-3 space-y-2">
                 {hiringSignals.map((signal) => (
-                  <li key={signal} className="rounded-xl border border-[#6aa8ff7f] bg-[#0a285ea6] px-3 py-2 text-sm font-medium">
+                  <li key={signal} className="rounded-sm border border-[#6aa8ff7f] bg-[#0a285ea6] px-3 py-2 text-sm font-medium">
                     {signal}
                   </li>
                 ))}
@@ -93,13 +93,13 @@ const HomeBody = () => {
 
         <Reveal className="relative" delay={0.12}>
           <aside className="surface-panel noise-overlay overflow-hidden p-5 md:p-8">
-            <div className="rounded-2xl border border-[#5f8ed8b3] bg-[#081838] p-2">
+            <div className="rounded-sm border border-[#5f8ed8b3] bg-[#081838] p-2">
               <Image
                 src="/common/aboutMe.svg"
                 alt="Ilustração de Marcelo Leal"
                 width={520}
                 height={520}
-                className="h-auto w-full rounded-xl"
+                className="h-auto w-full rounded-sm"
                 priority
               />
             </div>
@@ -126,7 +126,7 @@ const HomeBody = () => {
           {techStack.map((item, index) => (
             <Reveal key={item.name} delay={index * 0.05}>
               <div className="surface-panel flex items-center gap-4 p-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#7fc0ff] bg-[#0a2f6f] p-2 shadow-[0_0_20px_rgba(22,196,255,0.35)]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-sm border border-[#7fc0ff] bg-[#0a2f6f] p-2 shadow-[0_0_20px_rgba(22,196,255,0.35)]">
                   <Image src={item.icon} alt={item.name} width={34} height={34} className="h-8 w-8 drop-shadow-[0_0_8px_rgba(124,222,255,0.6)]" />
                 </div>
                 <div>

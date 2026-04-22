@@ -61,7 +61,7 @@ const ProjectBody = ({ project }: Props) => {
               {project.highlights.map((item) => (
                 <li
                   key={item}
-                  className="rounded-xl border border-[#5c8edcb8] bg-[#0a1f4db8] px-3 py-2 text-sm font-medium"
+                  className="rounded-sm border border-[#5c8edcb8] bg-[#0a1f4db8] px-3 py-2 text-sm font-medium"
                 >
                   {item}
                 </li>
@@ -75,7 +75,7 @@ const ProjectBody = ({ project }: Props) => {
               {project.stack.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-[#84b9ffdd] bg-[#0b2a62] px-3 py-1 text-xs font-semibold text-[#e8f4ff] shadow-[0_0_16px_rgba(22,196,255,0.2)]"
+                  className="rounded-sm border border-[#84b9ffdd] bg-[#0b2a62] px-3 py-1 text-xs font-semibold text-[#e8f4ff] shadow-[0_0_16px_rgba(22,196,255,0.2)]"
                 >
                   {item}
                 </span>
